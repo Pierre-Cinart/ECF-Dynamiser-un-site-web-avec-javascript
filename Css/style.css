@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Arial", "Times New Roman", "Times, serif ";
 }
 
 html, body {
@@ -24,9 +25,11 @@ body {
 }
 
 .player h2 {
+  color: rgb(65, 65, 65);
   display: inline;
-  font-size: 90px;
-  font-weight: 400;
+  font-size: 80px;
+  font-weight: lighter;
+  margin-right: 10px;
 }
 
 .current-score {
@@ -34,6 +37,7 @@ body {
   height: 150px;
   background-color: rgb(202, 35, 35);
   border: 1px solid rgb(107, 3, 3);
+  margin-bottom: 50px;
 }
 
 .global-score {
@@ -47,6 +51,7 @@ body {
 }
 
 .info {
+  font-size: larger;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -55,11 +60,27 @@ body {
   width: 250px;
   height: 100vh;
   left: 50%;
-  color: gray;
+  color: rgb(75, 75, 75);
   transform: translate(-50%, 0);
 }
-.info img, .info p {
-  display: inline;
+.info div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.info div img {
+  margin-right: 15px;
+}
+
+#dice {
+  width: 150px;
+  height: 150px;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.45);
+}
+
+.roll-hold {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=style.css.map */
