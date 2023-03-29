@@ -3,6 +3,7 @@ $lightRed :  rgb(202, 35, 35);
 *{
     box-sizing: border-box;
     font-family : "Arial" , "Times New Roman" , "Times, serif ";
+    user-select: none;
 }
 html,body{
     margin: 0;

@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: "Arial", "Times New Roman", "Times, serif ";
+  user-select: none;
 }
 
 html, body {
