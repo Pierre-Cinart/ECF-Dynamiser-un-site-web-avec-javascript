@@ -1,1 +1,10 @@
-//mini jeux 
+// recupération des éléments du DOM
+const dice = document.querySelector('#dice')
+const name1 = document.querySelector('#p1')
+const name2 = document.querySelector('#p2')  
+const spot1 = document.querySelector('#spot1')
+const spot2 = document.querySelector('#spot2')
+const gScore1 = document.querySelector('#g-score-p1')
+const gScore2 = document.querySelector('#g-score-p2')
+const cScore1 = document.querySelector('#current-score-p1')
+const cScore2 = document.querySelector('#current-score-p2')
