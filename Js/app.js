@@ -25,6 +25,7 @@ let isRolling =false;
 // initialisation des variables 
 function init () { 
     player = 1
+    rolls = 0;
     globalScore = 0
     scoreP1 = 0
     scoreP2 = 0
@@ -54,17 +55,20 @@ function start () {
 }
 
 function rollDice () {
+    let rdm = 0
+    rolls ++
     if ( isRolling && rolls < 12 ){
-
-    }
-}
-function roll () {
-    if ( isRunning ) {
-        sndRoll.play()
-        let rdm = Math.floor( Math.random() * 6 + 1)
+        rdm = Math.floor( Math.random() * 6 + 1)
         dice.src = "./Images/dice" + rdm + '.png'
-        globalScore += rdm 
+        setTimeout(rollDice,1000/12)
 
+    } else if ( isRolling && rolls == 12){
+        rdm = Math.floor( Math.random() * 6 + 1)
+        dice.src = "./Images/dice" + rdm + '.png'
+        isRolling = false
+        isRunning = true
+        rolls = 0
+        console.log(rdm)
         if ( rdm == 1){
             sndRoll.pause();
             sndRoll.currentTime = 0;
@@ -78,21 +82,31 @@ function roll () {
                 cScore2.textContent = globalScore
                 swipePlayer(1)
             }
-
-            return;
+        } else {
+            globalScore += rdm 
+            if ( player == 1 ) {
+                cScore1.textContent = globalScore
+            }
+            else { 
+                cScore2.textContent = globalScore
+            }   
         }
-        if ( player == 1 ) {
-            cScore1.textContent = globalScore
-        }
-        else { 
-            cScore2.textContent = globalScore
-        }   
+        
+    } 
+}
+function roll () {
+    if ( isRunning ) {
+        sndRoll.play()
+        isRolling = true;
+        isRunning = false
+        rollDice()    
     }
 }
 
 function hold () {
-    sndHold.play()
+   
     if ( isRunning ){
+        sndHold.play()
         if ( player == 1 ){
             scoreP1 +=globalScore
             globalScore = 0 
