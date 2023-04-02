@@ -47,8 +47,6 @@ body {
 .global-score {
   font-size: 80px;
   color: rgb(202, 35, 35);
-  position: absolute;
-  top: 75px;
 }
 
 .round-score {
