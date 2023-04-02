@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Arial", "Times New Roman", "Times, serif ";
+  font-family: "Lato", sans-serif;
   user-select: none;
 }
 
@@ -15,30 +15,22 @@ body {
   height: 100vh;
 }
 
-.player {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  width: 50%;
-  height: 100vh;
-}
-
 .player h2 {
   color: rgb(65, 65, 65);
   display: inline;
-  font-size: 70px;
-  font-weight: lighter;
+  font-size: 80px;
+  font-weight: 400;
   margin-right: 10px;
 }
 
 .current-score {
+  font-weight: bolder;
   width: 220px;
   height: 120px;
   background-color: rgb(202, 35, 35);
   border: 1px solid rgb(107, 3, 3);
-  margin-top: 200px;
+  margin: auto;
+  margin-top: 55%;
 }
 .current-score p {
   margin-top: 10px;
@@ -55,7 +47,8 @@ body {
 }
 
 .info {
-  font-size: larger;
+  font-size: 30px;
+  font-weight: bolder;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
