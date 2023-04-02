@@ -89,4 +89,21 @@ body {
   flex-direction: column;
 }
 
+#mode-select {
+  display: none;
+  color: wheat;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, 50%);
+}
+#mode-select p {
+  cursor: pointer;
+  padding: 5px;
+  border: solid 1px black;
+  border-radius: 5%;
+  background-color: rgb(83, 83, 83);
+}
+
 /*# sourceMappingURL=style.css.map */

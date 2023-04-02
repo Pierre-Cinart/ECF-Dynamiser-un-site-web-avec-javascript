@@ -8,18 +8,23 @@
     <title>Mini jeux ECF</title>
 </head>
 <body>
+   
     <div class="info">
         <div onclick="start()">
             <img src="./Images/plus-circle.svg" alt="logo-plus">
             <p>NEW GAME</p>
         </div>
+        <div id="mode-select">
+            <p onclick="selectMode(1)">MODE SOLO</p>
+            <p onclick="selectMode(2)">MODE 2 JOUEURS</p>
+        </div>
         <img id = "dice" src="./Images/dice5.png" alt="dice" style="background-color: beige; border-radius: 5%; border: solid 1px rgb(226, 224, 224);">
         <div class="roll-hold">
-            <div onclick="roll()">
+            <div  id = "roll" onclick="roll()">
                 <img src="./Images/arrow-repeat.svg" alt="logo roll">
-                <p >ROLL DICE</p>
+                <p id = >ROLL DICE</p>
             </div>
-            <div onclick="hold()"> 
+            <div id = "hold" onclick="hold()"> 
                 <img src="./Images/hold.svg" alt="logo hold">
                 <p>HOLD</p>
             </div>
