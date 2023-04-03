@@ -2,7 +2,7 @@ $lightRed :  rgb(202, 35, 35);
 
 *{
     box-sizing: border-box;
-    font-family : "Arial" , "Times New Roman" , "Times, serif ";
+    font-family: 'Lato', sans-serif;
     user-select: none;
 }
 html,body{
@@ -13,39 +13,38 @@ body{
     display: flex;
     width: 100%;
     height: 100vh;
+
 }
-.player{
+.player div{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 50%;
-    height: 100vh;
 }
 .player h2{
     color: rgb(65, 65, 65);
     display: inline;
-    font-size: 70px;
-    font-weight: lighter;
+    font-size: 80px;
+    font-weight: 200;
     margin-right: 10px;
 }
 
 .current-score{
-    
-    width: 220px;
-    height:120px;
-    background-color:$lightRed;
+    display: flex;
+    flex-direction: column;
+    font-weight: bolder;
+    width: 240px;
+    height:140px;
     border: 1px solid rgb(107, 3, 3);
-    margin-top: 200px;
+    margin: auto;
+    margin-top: 230px ;
     p{
         margin-top : 10px;
     }
 }
 
 .global-score{
-    font-size: 80px;
-    color : $lightRed; 
+    font-size: 100px;
+    
 }
 
 .round-score{
@@ -54,7 +53,8 @@ body{
 }
 
 .info {
-    font-size: larger;
+    font-size: 30px;
+    font-weight: bolder;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -67,12 +67,17 @@ body{
     transform: translate(-50% , 0);
     div {
         display: flex;
+        justify-content: center;
         align-items: center;
         cursor: pointer;
     }
     div img {
         margin-right: 15px;
-    }    
+    }
+    div p {
+        margin-top: 15px;
+    }
+     
 }
 
 #dice {
@@ -91,7 +96,7 @@ body{
     text-align: center;
     position: absolute;
     left: 50%;
-    top: 10%;
+    top: 12%;
     transform: translate(-50% , 50%);
     p{
         cursor: pointer;
