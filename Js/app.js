@@ -16,6 +16,7 @@ let sndClick = new Audio('./Audio/click.mp3')
 let sndHold = new Audio('./Audio/hold.wav')
 let sndRoll = new Audio('./Audio/roll.wav')
 
+// variables d environement
 let globalScore = 0
 let scoreP1 = 0
 let scoreP2 = 0
@@ -58,7 +59,7 @@ function start () {
     }
     
 }
-
+// fonctions pour menu caché de la selection du nombre de joueurs
 function askForMode(){
     menuMode.style.display = "block"
     
@@ -71,14 +72,27 @@ function selectMode (nb){
     sndClick.play()
     menuMode.style.display = "none"
 }
+
+// fonctions de lancement du dé
+function roll () {
+    if ( isRunning ) {
+        sndRoll.play()
+        isRolling = true;
+        isRunning = false
+        rollDice()  
+        console.log(player + "roll") 
+    }
+}
+
 function rollDice () {
     let rdm = 0
     rolls ++
+    //animation 
     if ( isRolling && rolls < 12 ){
         rdm = Math.floor( Math.random() * 6 + 1)
         dice.src = "./Images/dice" + rdm + '.png'
         setTimeout(rollDice,1000/12)
-
+    // affichage du dé et ajout du score
     } else if ( isRolling && rolls == 12){
         rdm = Math.floor( Math.random() * 6 + 1)
         dice.src = "./Images/dice" + rdm + '.png'
@@ -98,18 +112,18 @@ function rollDice () {
                 
                 cScore2.textContent = globalScore
                 swipePlayer(1)
-            }
-        } else {
+            }// fin d 'ecxeption
+        } else { // update current score
             globalScore += rdm 
             if ( player == 1 ) {
                 cScore1.textContent = globalScore
             }
             else { 
                 cScore2.textContent = globalScore
-            }
+            }// conditions mode 1 joueur vsIA = true 
             if ( player == 2 && vsIA && rdm!=1){
                 let reRoll = Math.random() 
-                
+                //logique IA
                 if (globalScore + parseInt(gScore2.textContent , 10) >= 100){
                     hold()
                 }else if (globalScore < 6 && rdm!=1){
@@ -142,17 +156,7 @@ function rollDice () {
     } 
     
 }
-
-function roll () {
-    if ( isRunning ) {
-        sndRoll.play()
-        isRolling = true;
-        isRunning = false
-        rollDice()  
-        console.log(player + "roll") 
-    }
-}
-
+// HOLD
 function hold () {
     console.log(player + ' hold')
     if ( isRunning ){
@@ -179,11 +183,11 @@ function hold () {
                 }
     }
 }
-
+// WIN
 function win () {
    alert ('le joueur' + player + ' remporte la partie')
 }
-
+// changement de joueur
 function swipePlayer ( nb ) {
     player = nb
     if ( nb == 1 ) {
@@ -212,9 +216,9 @@ function swipePlayer ( nb ) {
     }
 
 }
-
+// fait jouer l adversaire en mode solo
 function playIA ( ){
     if (player == 2) {roll()}
 }
 
-init();
+init()
