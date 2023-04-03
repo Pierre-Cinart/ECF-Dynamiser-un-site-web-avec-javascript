@@ -17,7 +17,7 @@
     <section class="container-fluid">
         <!-- player 1 col-6 -->
         <div class="row">
-            <div class=" player col-6 bg-secondary text-center " style="height:100vh">
+            <div class=" player col-6 bg-light text-center " style="height:100vh">
                 <div  class="row">
                     <div class="col-12">
                         <h2 id ="p1">PLAYER 1</h2>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <!-- player 2 col-6 -->
-            <div class="player col-6 bg-light text-center" style="height:100vh">
+            <div class="player col-6 bg-white text-center" style="height:100vh">
                 <div  class="row">
                     <div class="col-12 ">
                         <h2 id ="p2">PLAYER 2</h2>
@@ -46,8 +46,8 @@
             </div>
         </div>
     </section>
-
-    <div class="info "  >
+    <!--  menu du jeu -->
+    <section class="info "  >
         <div onclick="start()">
             <img src="./Images/plus-circle.svg" alt="logo-plus">
             <p>NEW GAME</p>
@@ -65,12 +65,13 @@
                 <p>HOLD</p>
             </div>
         </div>
-    </div>
-
-    <div id="mode-select">
+    </section>
+    <!-- menu caché choix du nombre de joueurs -->
+    <section id="mode-select">
         <p onclick="selectMode(1)">MODE SOLO</p>
         <p onclick="selectMode(2)">MODE 2 JOUEURS</p>
-    </div>
+    </section>
+    
     <script type = "text/javascript" src="./Js/app.js"></script>
    </body>
    </html>
