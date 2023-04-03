@@ -45,7 +45,7 @@ function init () {
 // nouvelle partie
 function start () {
     sndClick.play(); 
-    if (isRunning){
+    if (isRunning || isRolling){
         let ask = confirm("Une partie est en cours . \n êtes vous sure de vouloir recommencer ?");
         if ( ask == true ) {
             isRunning = false ;
@@ -162,14 +162,14 @@ function hold () {
             globalScore = 0 
             gScore1.textContent = scoreP1
             cScore1.textContent = 0
-            if ( scoreP1 <= 100 )
+            if ( scoreP1 < 100 )
                 swipePlayer(2)  
         } else { 
             scoreP2 +=globalScore
             globalScore = 0 
             gScore2.textContent = scoreP2
             cScore2.textContent = 0
-            if ( scoreP2 <= 100 )
+            if ( scoreP2 < 100 )
                 swipePlayer(1)    
         }
         if ( scoreP1 >= 100 || scoreP2 >= 100 )
